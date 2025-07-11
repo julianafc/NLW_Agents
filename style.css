@@ -112,6 +112,35 @@ button:disabled {
     cursor: not-allowed;
 }
 
+#aiResponse {
+    background-color: rgba(000, 000, 000, 0.4);
+    padding: 1.25rem;
+    border-left: solid 5px;
+    border-radius: 0.625rem;
+    border-image-slice: 1;
+
+    /* border-width: 5px; */
+}
+
+#aiResponse ul {
+    padding-left: 1.5rem;
+    opacity: 0.8;
+}
+
+#aiResponse p {
+    color: white;
+}
+
+.gradient {
+    border-image-source: linear-gradient(180deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%);
+    border-radius: 0.625rem;
+
+}
+
+.hidden {
+    display: none;
+}
+
 .loading {
     animation: pulse 1s infinite;
 }

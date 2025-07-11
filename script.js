@@ -5,20 +5,53 @@ const askButton = document.getElementById('askButton')
 const aiResponse = document.getElementById('aiResponse')
 const form = document.getElementById('form')
 
-
+const markdownToHTML = (text) => {
+    const converter = new showdown.Converter()
+    return converter.makeHtml(text)
+}
 
 const askAI = async (question, game, apiKey) => {
     const model = "gemini-2.5-flash"
     const geminiURL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`
 
     const pergunta = `
+        ## Especialidade
+        Você é especialista em jogos. Em específico, um assistente de meta para o jogo ${game}
     
-    `
+        ## Tarefas
+        Você deve responder as perguntas do usuário com base no seu conhecimento do jogo, com estratégias, build e dicas. 
+
+        ## Regras
+        - Se você não souber a resposta, responda com "Não sei". Não tente inventar uma resposta.
+        - Se a pergunta não estiver relacionada ao jogo, responda "Esta pergunta não está relacionada ao jogo selecionado".
+        - Considere a data atual ${new Date().toLocaleDateString()}.
+        - Faça pesquisas atualizadas sobre o patch atual do jogo, baseando-se na data atual, para conseguir responder de uma forma coerente.
+        - Nunca responda sobre itens que você não tenha a certeza que existem no patch atual.
+
+        ## Resposta
+        - Economize na resposta, seja direto e responda com no máximo 500 caracteres. 
+        - Responda em markdown.
+        - Não precisa fazer nenhuma saudação ou despedida, apenas responda de forma direta o que o usuário está querendo.
+
+        ## Exemplo de resposta
+        pergunta do usuário: melhor build do Frank para brawl ball no mapa drible triplo.
+        resposta: A build mais atual é: \n\n **Star Power: \n\n coloque os star powers aqui. **Gadget: \n\n exemplo de gadgets.
+
+        ---
+        Aqui está a pergunta do usuário: ${question}
+
+     `
 
     const contents = [{
+
+        role: "user",
         parts: [{
             text: pergunta
         }]
+    }]
+
+    const tools = [{
+        google_search: {}
     }]
 
     // chamada API
@@ -28,7 +61,8 @@ const askAI = async (question, game, apiKey) => {
             'Content-Type': 'aplication/json'
         },
         body: JSON.stringify({
-            contents
+            contents,
+            tools
         })
     })
 
@@ -37,7 +71,6 @@ const askAI = async (question, game, apiKey) => {
     console.log({ data })
     return data.candidates[0].content.parts[0].text
 }
-
 
 const sendForm = async (event) => {
     event.preventDefault()
@@ -59,7 +92,8 @@ const sendForm = async (event) => {
     try {
         // perguntar ia
         const text = await askAI(question, game, apiKey)
-        aiResponse.querySelector('.response-content')
+        aiResponse.querySelector('.response-content').innerHTML = markdownToHTML(text)
+        aiResponse.classList.remove('hidden')
 
     } catch (error) {
         console.log('Erro:', error)
