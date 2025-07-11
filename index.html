@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
 
     <title>NLW Agent</title>
   </head>
@@ -27,14 +27,15 @@
           <h2 class="title">Assistente de Meta</h2>
           <p>Pergunte sobre estratégias, build e dicas para seus jogos!</p>
 
-          <form action="">
+          <form id="form">
             <input
+              id="apiKey"
               type="password"
               placeholder="Informe a API KEY do Gemini"
               required
             />
 
-            <select name="" id="">
+            <select name="" id="gameSelect">
               <option value="">Selecione um jogo</option>
               <option value="valorant">Valorant</option>
               <option value="lol">League of Legends</option>
@@ -42,12 +43,13 @@
             </select>
 
             <input
+              id="questionInput"
               type="text"
               placeholder="Ex: melhor build para ABC..."
               required
             />
 
-            <button>Perguntar</button>
+            <button id="askButton">Perguntar</button>
           </form>
 
           <div id="aiResponse">
@@ -56,5 +58,7 @@
         </div>
       </section>
     </main>
+
+    <script src="/script.js"></script>
   </body>
 </html>
