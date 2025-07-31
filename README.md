@@ -2,7 +2,7 @@
 
 O **Assistente de Meta** é um assistente inteligente que ajuda jogadores a encontrarem a **melhor build**, **estratégias atuais** e **dicas valiosas** para os seus jogos favoritos, utilizando a inteligência do **Google Gemini**.
 
-Este projeto foi desenvolvido durante a **NLW Agents** da [Rocketseat](https://www.rocketseat.com.br/), com diversas adaptações para atender às minhas preferências pessoais de design e funcionamento.
+Este projeto foi desenvolvido durante a **NLW Agents** da [Rocketseat](https://www.rocketseat.com.br/), com diversas adaptações para atender às minhas preferências pessoais de funcionamento.
 
 ## 📋 Funcionalidades
 

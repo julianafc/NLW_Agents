@@ -58,7 +58,7 @@ const askAI = async (question, game, apiKey) => {
     const response = await fetch(geminiURL, {
         method: 'POST',
         headers: {
-            'Content-Type': 'aplication/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             contents,
