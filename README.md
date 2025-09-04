@@ -25,7 +25,7 @@ Para utilizar o Meta Assistant, você precisará de:
 
 ## 🌐 Acesse a demo
 
-👉 [Clique aqui para acessar a versão online do Meta Assistant](https://seu-usuario.github.io/meta-assistant)
+👉 [Clique aqui para acessar a versão online do Meta Assistant](https://julianafc.github.io/Assistente_de_Meta/)
 
 1. Insira sua **API Key** do Google quando solicitado.
 2. Faça perguntas como:
