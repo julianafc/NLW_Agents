@@ -29,7 +29,7 @@ Para utilizar o Meta Assistant, você precisará de:
 
 1. Insira sua **API Key** do Google quando solicitado.
 2. Faça perguntas como:
-   - "Qual a melhor build para Vayne no LoL atualmente?"
+   - "Qual a melhor build para o Mew no Pokemon Unite atualmente?"
    - "Dicas para melhorar no Brawl Stars?"
 
 ## ⚠️ Avisos
@@ -40,4 +40,4 @@ Para utilizar o Meta Assistant, você precisará de:
 ## 📚 Créditos
 
 - Projeto baseado na proposta da **NLW Agents** da Rocketseat
-- Adaptações e melhorias por [Juliana Figueira](https://github.com/julianafc)
+- Adaptações por [Juliana Figueira](https://github.com/julianafc)
